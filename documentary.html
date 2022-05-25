@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Movies</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+</head>
+<body>
+    <div class="page-wrapper">
+      <header>
+        <section>
+        <a href="https://www.linkedin.com/in/sutharmayur" id="logo" target="_blank">T - Movies</a>
+        
+        <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
+        <input type="checkbox" id="toggle-1">
+        
+        <nav>
+        <ul>
+        <li><a href="index.html"><i class="icon-home"></i>Home</a></li>
+        <li><a href="movies.html"><i class="icon-user"></i>Movies</a></li>
+        <li><a href="documentary.html"><i class="icon-gear"></i>Documentary</a></li>
+        <li><a href="about.html"><i class="icon-picture"></i>About us</a></li>
+        </ul>
+        </nav>
+        </header>
+        
+        </section>
+         <section class="headline">
+           <h1>Welcome to T - movies </h1>
+           <p>We are an ocean of all your favourite movies</p>
+         </section>
+
+         <section class="features">
+           <div class="feature-container">
+             <img src="img/11.jpg" alt="Flexbox Feature">
+             <h2>KICK ASS</h2>
+             <p>Kick-Ass is a 2010 superhero film directed by Matthew Vaughn from a screenplay by Jane Goldman and
+                Vaughn. It is based on the comic book of the same.</p>
+           </div>
+           <div class="feature-container">
+             <img src="img/16.jpg" alt="Flexbox Feature">
+             <h2>1920 LONDON</h2>
+             <p>While flexbox is used for the the mobile navbar, CSS grid is used for the desktop navbar showing many ways we can use both.</p>
+           </div>
+           <div class="feature-container">
+             <img src="img/13.jpg" alt="Flexbox Feature">
+             <h2>1920 CANADA</h2>
+             <p>This pen contains basic html to setup the page to display the responsive navbar.</p>
+           </div>
+         </section>
+
+         <section class="features">
+          <div class="feature-container">
+            <img src="img/10.jpg" alt="Flexbox Feature">
+            <h2>Due Date</h2>
+            <p>Kick-Ass is a 2010 superhero film directed by Matthew Vaughn from a screenplay by Jane Goldman and
+               Vaughn. It is based on the comic book of the same.</p>
+          </div>
+          <div class="feature-container">
+            <img src="img/15.jpg" alt="Flexbox Feature">
+            <h2></h2>
+            <p>While flexbox is used for the the mobile navbar, CSS grid is used for the desktop navbar showing many ways we can use both.</p>
+          </div>
+          <div class="feature-container">
+            <img src="img/14.jpg" alt="Flexbox Feature">
+            <h2>Paths of glory</h2>
+            <p>This Doumentary is only available in the Gaborone theaters, its about finding the right way to glory </p>
+          </div>
+        </section>
+       </div>
+
+      
+
+
+       <footer class="footer-distributed">
+        <div class="footer-left">
+          <IMG SRC="img/4.jpg" ALT="" WIDTH=150 HEIGHT=100>
+          <p class="footer-links">
+            <a href="index.html">Home</a> ·
+            <a href="about.html">About</a> ·
+            <a href="contact.html">Contact</a>
+          </p>
+          <p class="footer-company-name">Onlinemovies &copy; 2022</p>
+        </div>
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>fairgrounds Gaborone</span> Mandela Road</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>73456727</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">support@Tmovies.com</a></p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>About Us</span> We are a movie hub/movie spot
+          </p>
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+      </footer>
+
+
+       <script src='js/index.js'></script>
+       <script>
+           const arrows = document.querySelectorAll(".arrow");
+const movieList = document.querySelectorAll(".recommended-movie-list");
+
+arrows.forEach((arrow,i)=>{
+    const itemNum = movieList[i].querySelectorAll("img").length;
+    let clickCounter =0;
+    arrow.addEventListener("click",()=>{
+        clickCounter++;
+        if(itemNum-(5+clickCounter)>=0){
+            movieList[i].style.transform = `translateX(${movieList[i].computedStyleMap().get("transform")[0].x.value-300}px)`;
+        } else{
+            movieList[i].style.transform = "translateX(0)";
+            clickCounter=0;
+
+        }
+    })
+   
+  console.log(movieList[i].querySelectorAll("img").length);
+});
+
+const ball= document.querySelector(".toggle-container");
+const items = document.querySelectorAll(".toggle,.nav-container,.recommended-movie-title,.recommended-movie-container"
+);
+ball.addEventListener("click",()=>{
+  items.forEach(item=>{
+    item.classList.toggle("active");
+  });
+  ball.classList.toggle("active");
+});
+       </script>
+</body>
+</html>
